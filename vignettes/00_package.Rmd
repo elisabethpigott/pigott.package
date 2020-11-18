@@ -30,6 +30,6 @@ This will convert your species community dataframe and transform it into a matri
 library(tidyverse)
 bees <- read_csv("../inst/extdata/bee_fxndata.csv")
 print(bees)
-beematrix(bees, Species, Site_names=Mo_since_burn_grouped, Count) 
+beematrix(bees, Species, Mo_since_burn_grouped, Count) 
 
 ```
