@@ -94,7 +94,7 @@
 <div id="converting-a-species-community-dataframe-to-a-matrix-for-further-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#converting-a-species-community-dataframe-to-a-matrix-for-further-analysis" class="anchor"></a>Converting a species community dataframe to a matrix for further analysis</h2>
-<p>This will convert your species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must plug in a dataframe with only Species, Site names, and Count or Abundance as three separate columns. For my example, formal site names are irrelevant so I instead use Mo_since_burn_grouped, as my independent variable is time since burn. The output will be a matrix of spread out species community data.</p>
+<p>This function will convert a species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must use a dataframe with only Species, Site_names, and Count or Abundance in three separate columns. For my example data, formal site names are irrelevant, so I use Mo_since_burn_grouped instead of Site_names as my independent variable. The output will be a matrix of spread out species community data.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
 <pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --</code></pre>
@@ -228,6 +228,11 @@
 ## [93,]      1        6        0       8       7
 ## [94,]      2        1        1       3       1</code></pre>
 </div>
+<div id="analysing-species-diversity-hill-numbers-using-a-community-data-matrix" class="section level2">
+<h2 class="hasAnchor">
+<a href="#analysing-species-diversity-hill-numbers-using-a-community-data-matrix" class="anchor"></a>Analysing species diversity (Hill Numbers) using a community data matrix</h2>
+<p>This function uses iNEXT to report the effective number of species as Hill numbers of the order q.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -241,7 +246,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Elisabeth Pigott.</p>
 </div>
 
 <div class="pkgdown">
