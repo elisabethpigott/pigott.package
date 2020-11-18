@@ -23,7 +23,7 @@ library(pigott.package)
 
 ## Converting a species community dataframe to a matrix for further analysis
 
-This will convert your species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must plug in a dataframe with only Species, Site_names, and Count as three seperate columns. The output will be a matrix of spread out species community data.
+This function will convert a species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must use a dataframe with only Species, Site_names, and Count or Abundance in three separate columns. For my example data, formal site names are irrelevant, so I use Mo_since_burn_grouped instead of Site_names as my independent variable. The output will be a matrix of spread out species community data.
 
 ```{r}
 
@@ -33,3 +33,7 @@ print(bees)
 beematrix(bees, Species, Mo_since_burn_grouped, Count) 
 
 ```
+
+## Analysing species diversity (Hill Numbers) using a community data matrix
+
+This function uses iNEXT to report the effective number of species as Hill numbers of the order q. 

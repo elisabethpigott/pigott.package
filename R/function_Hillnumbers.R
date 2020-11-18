@@ -1,4 +1,4 @@
-#'#'This function incorporates species richness, Shannon diversity, and Simpson diversity and reports the effective number of species as Hill Numbers of the order q.
+#'#'This function incorporates species richness and reports the effective number of species as Hill Numbers of the order q.
 #'
 #'@param x matrix, data.frame, vector, or list of species abundances or incidence frequencies to use
 #'@param q numeric value specifying the diversity order of Hill number
@@ -7,8 +7,6 @@
 #'
 #'@example
 #'iNEXT(beematrixx, q = 0, datatype = "abundance")
-#'iNEXT(beematrixx, q = 1, datatype = "abundance")
-#'iNEXT(beematrixx, q = 2, datatype = "abundance")
 
 
 richness <- function(x, q = 0, datatype = "abundance") {
@@ -19,6 +17,17 @@ richness <- function(x, q = 0, datatype = "abundance") {
   return(richnessplot)
 }
 
+#'This function incorporates Shannon diversity and reports the effective number of species as Hill Numbers of the order q.
+#'
+#'@param x matrix, data.frame, vector, or list of species abundances or incidence frequencies to use
+#'@param q numeric value specifying the diversity order of Hill number
+#'@param datatype individual based abundance data 
+#'@return effective number of species
+#'
+#'@example
+#'iNEXT(beematrixx, q = 1, datatype = "abundance")
+
+
 shannon <- function(x, q = 1, datatype = "abundance") {
   
   assert_that(is.matrix(x))
@@ -26,6 +35,17 @@ shannon <- function(x, q = 1, datatype = "abundance") {
   shannonplot <- ggiNEXT(shannon)
   return(shannonplot)
 }
+
+#'This function incorporates Simpson diversity and reports the effective number of species as Hill Numbers of the order q.
+#'
+#'@param x matrix, data.frame, vector, or list of species abundances or incidence frequencies to use
+#'@param q numeric value specifying the diversity order of Hill number
+#'@param datatype individual based abundance data 
+#'@return effective number of species
+#'
+#'@example
+#'iNEXT(beematrixx, q = 2, datatype = "abundance")
+
 
 simpson <- function(x, q = 2, datatype = "abundance") {
   

@@ -1,16 +1,16 @@
 Package: pigott.package
-Title: Make a community matrix to then use for Hill numbers and species accumulation curves
+Title: Make a community matrix to then use for Hill numbers and species accumulation curves.
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Elisabeth",
+           family = "Pigott",
            role = c("aut", "cre"),
            email = "elisabeth.pigott@selu.edu")
-Description: This is an R package that does a series of community data analyses.
+Description: This is an R package that converts a dataframe to a matrix and does a series of community data analyses.
 Depends:
   R (>= 3.0.0)
 Imports:
-  tidyverse, iNEXT, vegan, dplyr, ggplot2, assertthat
+  tidyverse, iNEXT, vegan, dplyr, ggplot2, assertthat, magrittr
 Suggests:
   knitr, rmarkdown, testthat
 License: MIT
