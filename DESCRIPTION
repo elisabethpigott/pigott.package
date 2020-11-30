@@ -1,5 +1,5 @@
 Package: pigott.package
-Title: Make a community matrix to then use for Hill numbers and species accumulation curves.
+Title: Make a community matrix to then use for Hill numbers and non-metric multidimensional scaling.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Elisabeth",

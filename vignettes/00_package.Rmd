@@ -23,17 +23,33 @@ library(pigott.package)
 
 ## Converting a species community dataframe to a matrix for further analysis
 
-This function will convert a species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must use a dataframe with only Species, Site_names, and Count or Abundance in three separate columns. For my example data, formal site names are irrelevant, so I use Mo_since_burn_grouped instead of Site_names as my independent variable. The output will be a matrix of spread out species community data.
+This function will convert a species community dataframe and transform it into a matrix. You can then use this matrix to plug into community analysis functions. You must use a dataframe with only Species, Site_names, and Count or Abundance in three separate columns. For my example data, formal site names are irrelevant, so I use Mo_since_burn_grouped instead of Site_names as my independent variable. The output will be a matrix of spread out species community data with Species in rows and Sites in columns.
 
 ```{r}
 
 library(tidyverse)
 bees <- read_csv("../inst/extdata/bee_fxndata.csv")
 print(bees)
-beematrix(bees, Species, Mo_since_burn_grouped, Count) 
+bmatrix <- beematrix(bees, Species, Mo_since_burn_grouped, Count) 
+
+```
+Check to see how your matrix looks:
+
+```{r}
+
+head(bmatrix)
 
 ```
 
+
 ## Analysing species diversity (Hill Numbers) using a community data matrix
 
-This function uses iNEXT to report the effective number of species as Hill numbers of the order q. 
+This function uses iNEXT to report the effective number of species as Hill numbers of the order q. There are three orders (0-2) of q: richness, Shannon diversity, and Simpson diversity. The function requires a matrix as the input argument and the output will be a ggplot showing species diversity across the number of individuals caught. This is important to see, as I am collecting species over sites with different burn histories to see if there is an effect of burn on bee communities.
+
+We will be analyzing Shannon diversity (q = 1) using the Shannon function:
+
+```{r}
+library(iNEXT)
+shannonplot <- shannon(bmatrix)
+
+```
