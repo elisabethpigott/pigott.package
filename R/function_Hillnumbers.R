@@ -4,7 +4,9 @@
 #'@param q numeric value specifying the diversity order of Hill number
 #'@param datatype individual based abundance data 
 #'@return effective number of species
-#'
+#'@importFrom assertthat assert_that
+#'@export
+#' 
 #'@example
 #'iNEXT(beematrixx, q = 0, datatype = "abundance")
 
@@ -23,7 +25,9 @@ richness <- function(x, q = 0, datatype = "abundance") {
 #'@param q numeric value specifying the diversity order of Hill number
 #'@param datatype individual based abundance data 
 #'@return effective number of species
-#'
+#'@importFrom assertthat assert_that
+#'@export
+#' 
 #'@example
 #'iNEXT(beematrixx, q = 1, datatype = "abundance")
 
@@ -42,7 +46,9 @@ shannon <- function(x, q = 1, datatype = "abundance") {
 #'@param q numeric value specifying the diversity order of Hill number
 #'@param datatype individual based abundance data 
 #'@return effective number of species
-#'
+#'@importFrom assertthat assert_that
+#'@export
+#' 
 #'@example
 #'iNEXT(beematrixx, q = 2, datatype = "abundance")
 
