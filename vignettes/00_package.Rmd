@@ -60,6 +60,7 @@ The other two functions, richness and Simpson, can also be analyzed, but we will
 
 ```{r}
 
+library(iNEXT)
 richnessplot <- richness(bmatrix, q = 0, datatype = "abundance")
 richnessplot
 
@@ -67,6 +68,7 @@ richnessplot
 
 ```{r}
 
+library(iNEXT)
 simpsonplot <- simpson(bmatrix, q = 2, datatype = "abundance")
 simpsonplot
 

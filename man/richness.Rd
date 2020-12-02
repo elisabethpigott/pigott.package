@@ -2,14 +2,14 @@
 % Please edit documentation in R/function_Hillnumbers.R
 \name{richness}
 \alias{richness}
-\title{#'This function incorporates species richness and reports the effective number of species as Hill Numbers of the order q.}
+\title{#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity.}
 \usage{
 richness(x, q = 0, datatype = "abundance")
 }
 \arguments{
 \item{x}{matrix, data.frame, vector, or list of species abundances or incidence frequencies to use}
 
-\item{q}{numeric value specifying the diversity order of Hill number}
+\item{q}{numeric value specifying the diversity order of Hill number which determines sensitivity to species relative abundances}
 
 \item{datatype}{individual based abundance data}
 }
@@ -17,5 +17,5 @@ richness(x, q = 0, datatype = "abundance")
 effective number of species
 }
 \description{
-#'This function incorporates species richness and reports the effective number of species as Hill Numbers of the order q.
+#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity.
 }

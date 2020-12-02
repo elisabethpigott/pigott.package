@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity. — richness • pigott.package</title>
+<title>This function performs nonmetric multidimensional scaling (NMDS) on a community data.frame and plots the NMDS to visualize dissimilarities. — nmdsplot • pigott.package</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity. — richness" />
-<meta property="og:description" content="#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity." />
+<meta property="og:title" content="This function performs nonmetric multidimensional scaling (NMDS) on a community data.frame and plots the NMDS to visualize dissimilarities. — nmdsplot" />
+<meta property="og:description" content="This function performs nonmetric multidimensional scaling (NMDS) on a community data.frame and plots the NMDS to visualize dissimilarities." />
 
 
 
@@ -115,37 +115,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity.</h1>
+    <h1>This function performs nonmetric multidimensional scaling (NMDS) on a community data.frame and plots the NMDS to visualize dissimilarities.</h1>
     
-    <div class="hidden name"><code>richness.Rd</code></div>
+    <div class="hidden name"><code>nmdsplot.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity.</p>
+    <p>This function performs nonmetric multidimensional scaling (NMDS) on a community data.frame and plots the NMDS to visualize dissimilarities.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>richness</span><span class='op'>(</span><span class='va'>x</span>, q <span class='op'>=</span> <span class='fl'>0</span>, datatype <span class='op'>=</span> <span class='st'>"abundance"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>nmdsplot</span><span class='op'>(</span><span class='va'>x</span>, distance <span class='op'>=</span> <span class='st'>"bray"</span>, autotransform <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>matrix, data.frame, vector, or list of species abundances or incidence frequencies to use</p></td>
+      <td><p>species community data.frame with species as cols and sites as rows</p></td>
     </tr>
     <tr>
-      <th>q</th>
-      <td><p>numeric value specifying the diversity order of Hill number which determines sensitivity to species relative abundances</p></td>
+      <th>distance</th>
+      <td><p>dissimilarity index used</p></td>
     </tr>
     <tr>
-      <th>datatype</th>
-      <td><p>individual based abundance data</p></td>
+      <th>autotransform</th>
+      <td><p>automatic transformations of data points to whatever is most appropriate. To analyze raw data, set to =FALSE.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>effective number of species</p>
+    <p>nmds plot of data.frame</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
