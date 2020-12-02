@@ -42,14 +42,50 @@ head(bmatrix)
 ```
 
 
-## Analysing species diversity (Hill Numbers) using a community data matrix
+## Species diversity (Hill Numbers) analysis using a community data matrix
 
-This function uses iNEXT to report the effective number of species as Hill numbers of the order q. There are three orders (0-2) of q: richness, Shannon diversity, and Simpson diversity. The function requires a matrix as the input argument and the output will be a ggplot showing species diversity across the number of individuals caught. This is important to see, as I am collecting species over sites with different burn histories to see if there is an effect of burn on bee communities.
+This function uses iNEXT to report the effective number of species as Hill numbers of the order q. There are three diversity orders (0-2) of q: richness, Shannon diversity, and Simpson diversity. The function requires a matrix as the input argument and the output will be a ggplot showing species diversity across the number of individuals caught. This is important to see, as I am collecting species at sites with different burn histories to see if there is an effect of time since burn on bee communities.
 
-We will be analyzing Shannon diversity (q = 1) using the Shannon function:
+We will be analyzing Shannon diversity (q = 1) using the shannon function:
 
 ```{r}
-library(iNEXT)
-shannonplot <- shannon(bmatrix)
 
+library(iNEXT)
+shannonplot <- shannon(bmatrix, q = 1, datatype = "abundance")
+shannonplot
+
+```
+
+The other two functions, richness and Simpson, can also be analyzed, but we will not be executing this code during the presentation. I will drop the code below if you want to look at the richness and Simpson plots yourself.
+
+```{r}
+
+richnessplot <- richness(bmatrix, q = 0, datatype = "abundance")
+richnessplot
+
+```
+
+```{r}
+
+simpsonplot <- simpson(bmatrix, q = 2, datatype = "abundance")
+simpsonplot
+
+```
+
+## Analysing community data using nmds (non-metric multidimensional scaling)
+
+
+This function uses metaMDS to perform an NMDS ordination on a community dataset. This function will show me if my sites are similar/dissimilar from one another by which species I caught at each site. The input must be a data frame with the community data spread out, aka species as columns and sites as rows.
+
+First, we need to transpose my original matrix so that species are in columns and sites are in rows. For whatever reason, metaMDS and iNEXT have opposite input matrix formats.
+```{r}
+transbmatrix <- t(bmatrix)
+transbmatrix <- as.data.frame(transbmatrix)
+```
+
+Now I can compute my function.
+```{r}
+library(vegan)
+bee.mds <- nmdsplot(transbmatrix, distance = "bray", autotransform = "FALSE")
+bee.mds
 ```

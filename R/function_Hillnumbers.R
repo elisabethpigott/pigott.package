@@ -1,7 +1,7 @@
-#'#'This function incorporates species richness and reports the effective number of species as Hill Numbers of the order q.
+#'#'This function incorporates species assemblages and reports the effective number of species as Hill Numbers of the order q. Hill Numbers can be used to measure species diversity.
 #'
 #'@param x matrix, data.frame, vector, or list of species abundances or incidence frequencies to use
-#'@param q numeric value specifying the diversity order of Hill number
+#'@param q numeric value specifying the diversity order of Hill number which determines sensitivity to species relative abundances
 #'@param datatype individual based abundance data 
 #'@return effective number of species
 #'@importFrom assertthat assert_that
