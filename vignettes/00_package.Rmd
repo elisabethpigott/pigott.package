@@ -28,7 +28,7 @@ This function will convert a species community dataframe and transform it into a
 ```{r}
 
 library(tidyverse)
-bees <- read_csv("inst/extdata/bee_fxndata.csv")
+bees <- read_csv("../inst/extdata/bee_fxndata.csv")
 print(bees)
 bmatrix <- beematrix(bees, Species, Mo_since_burn_grouped, Count) 
 
