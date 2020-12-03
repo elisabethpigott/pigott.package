@@ -15,7 +15,7 @@ Install the package.
 devtools::install_github("elisabethpigott/pigott.package")
 ```
 
-Load the package.
+Load the package. The tutorial R Markdown can be found in vignettes.
 
 ```{r}
 library(pigott.package)
@@ -28,7 +28,7 @@ This function will convert a species community dataframe and transform it into a
 ```{r}
 
 library(tidyverse)
-bees <- read_csv("../inst/extdata/bee_fxndata.csv")
+bees <- read_csv("inst/extdata/bee_fxndata.csv")
 print(bees)
 bmatrix <- beematrix(bees, Species, Mo_since_burn_grouped, Count) 
 
@@ -56,7 +56,7 @@ shannonplot
 
 ```
 
-The other two functions, richness and Simpson, can also be analyzed, but we will not be executing this code during the presentation. I will drop the code below if you want to look at the richness and Simpson plots yourself.
+The other two functions, richness and Simpson, can also be analyzed, but we will not be executing the code during this presentation. I will drop the code below if you want to look at the richness and Simpson plots yourself.
 
 ```{r}
 
@@ -74,12 +74,12 @@ simpsonplot
 
 ```
 
-## Analysing community data using nmds (non-metric multidimensional scaling)
+## Analysing community data using NMDS (non-metric multidimensional scaling)
 
 
-This function uses metaMDS to perform an NMDS ordination on a community dataset. This function will show me if my sites are similar/dissimilar from one another by which species I caught at each site. The input must be a data frame with the community data spread out, aka species as columns and sites as rows.
+This function uses metaMDS to perform an NMDS ordination on a community dataset. Nonmetric multidimensional scaling is typically used in community ecology to iteratively find dissimilarity relations between samples among all sites sampled at. For my community dataset, this function will show me if my sites are dissimilar from one another by the relative abundances and species richness I collected from each site. The input must be a data frame with the community data spread out with species as columns and sites as rows.
 
-First, we need to transpose my original matrix so that species are in columns and sites are in rows. For whatever reason, metaMDS and iNEXT have opposite input matrix formats.
+First, we need to transpose my original matrix so that species are in columns and sites are in rows. Then, we need to formally convert the matrix into a data frame. For whatever reason, metaMDS and iNEXT have opposite input matrix formats.
 ```{r}
 transbmatrix <- t(bmatrix)
 transbmatrix <- as.data.frame(transbmatrix)
@@ -91,3 +91,4 @@ library(vegan)
 bee.mds <- nmdsplot(transbmatrix, distance = "bray", autotransform = "FALSE")
 bee.mds
 ```
+These data show that sites burned 6 to 10 months ago are more similar to sites burned 21 plus months ago. Sites burned 0 to 5 months ago have little species richness. My species checklist is still a work in progress, however.

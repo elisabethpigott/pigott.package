@@ -56,7 +56,7 @@ shannon <- function(x, q = 1, datatype = "abundance") {
 simpson <- function(x, q = 2, datatype = "abundance") {
   
   assert_that(is.matrix(x))
-  simpson <- iNEXT(x, q = 2, datatpe = "abundance")
+  simpson <- iNEXT(x, q = 2, datatype = "abundance")
   simpsonplot <- ggiNEXT(simpson)
   return(simpsonplot)
 }
